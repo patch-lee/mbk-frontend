@@ -1,0 +1,81 @@
+@import "../../scss/color.scss";
+@import "../../scss/font.scss";
+
+.filter {
+  position: absolute;
+  width: 300px;
+  top: 50px;
+  bottom: 15px;
+  right: 15px;
+  z-index: 10;
+  background-color: $white;
+  border: 1px solid $grey;
+  color: $secondary_color;
+  border-radius: 10px;
+  overflow: hidden;
+  .header {
+    border-bottom:1px $light-grey solid;
+    font-size: $header;
+    padding: 10px;
+    text-align: center;
+    user-select: none;
+    .x {
+      position: relative;
+      float: right;
+      color: $white;
+      cursor: pointer;
+    }
+    .x:hover {
+      color: $alert;
+    }
+  }
+  .content {
+    color: $grey;
+    font-size: $content;
+    user-select: none;
+    padding: 10px;
+    select,
+    input {
+      margin-left: 10px;
+      border-radius: 5px;
+      width: 125px;
+      border: 1px solid $secondary-color;
+      font-size: $content;
+    }
+    option:hover{
+      background-color: $primary-color;
+      color:$black;
+    }
+    .form {
+      float: right;
+      margin: 5px;
+    }
+    .button {
+      float: right;
+      margin: 5px;
+      .cancel {
+        margin: 5px;
+        border-radius: 5px;
+        background-color: $white;
+        border: 0.5px solid $grey;
+      }
+      .search {
+        margin: 5px;
+        border: 0.5px solid $primary-color;
+        background-color: $secondary-color;
+        color: $white;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+.filter.off {
+  display: none;
+  opacity: 0;
+  transition: 0.5;
+}
+.filter.on {
+  opacity: 1;
+  display: inherit;
+  transition: 0.5;
+}

@@ -1,25 +1,29 @@
-import React from 'react'
-import logo from './logo.svg'
-import classes from './App.css'
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+
+import Layout from "./containers/Layout/Layout";
+import Assignment from "./containers/Assignment/Assignment";
+
+import Setting from "./containers/Setting/Setting";
+import classes from "./App.scss";
 
 function App() {
   return (
     <div className={classes.App}>
-      <header className={classes.AppHeader}>
-        <img src={logo} className={classes.AppLogo} alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className={classes.AppLink}
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Switch>
+          <Route exact path="/" />
+          <Route path="/setupdata" />
+          <Route path="/assignment" component={Assignment} />
+          <Route path="/result" />
+          <Route path="/appraisal" />
+          <Route path="/report" />
+          <Route path="/dashboard" />
+          <Route path="/settings" component={Setting} />
+        </Switch>
+      </Layout>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -3,4 +3,8 @@ export const AUTH_LOGOUT = 'AUTH_LOGOUT'
 export const AUTH_REFESH_TOKEN = 'AUTH_REFRESH_TOKEN'
 export const AUTH_CHECK_TOKEN = 'AUTH_CHECK_TOKEN'
 
+export const APP_STATE_OPEN_NAV = 'APP_STATE_OPEN_NAV'
+export const APP_STATE_CLOSE_NAV = 'APP_STATE_CLOSE_NAV'
+
+
 export const someAction = 'SOME_ACTION'

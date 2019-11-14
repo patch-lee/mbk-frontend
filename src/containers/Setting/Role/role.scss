@@ -1,0 +1,42 @@
+@import "../../../scss/color.scss";
+@import "../../../scss/font.scss";
+@import "../../../scss/size.scss";
+
+.role {
+  width: 100%;
+  height: 100%;
+
+  .table {
+    width: 100%;
+    overflow: auto;
+    th {
+      color: $black;
+    }
+    tr {
+      text-align: left;
+      color: $light-grey;
+    }
+    td,th{
+      margin:0;
+      border-bottom: 1px  solid $light-grey;
+
+    }
+  }
+  .manage {
+    height: 25px;
+    .icon {
+      float: left;
+      margin: 0px 5px;
+      cursor: pointer;
+    }
+    .user:hover {
+      color: $success;
+    }
+    .edit:hover {
+      color: $warning;
+    }
+    .delete:hover {
+      color: $alert;
+    }
+  }
+}

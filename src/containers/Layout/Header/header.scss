@@ -1,0 +1,119 @@
+@import "../../../scss/color.scss";
+@import "../../../scss/font.scss";
+@import "../../../scss/size.scss";
+
+.header {
+  position: relative;
+  background-color: $white;
+  color: $light-grey;
+  font-size: $title;
+  z-index: 2;
+  width: auto;
+  height: $header-height;
+  padding: $header-padding-vertical $header-padding-horizontal;
+  overflow: hidden;
+  -moz-box-shadow: 0px 0px 5px 0px $grey;
+  -webkit-box-shadow: 0px 0px 5px 0px $grey;
+  box-shadow: 0px 0px 5px 0px $grey;
+  .logo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    padding: 0px 8px;
+    border-right: 1px $grey solid;
+    text-decoration: none;
+    font-size: 25px;
+    color: $black;
+    display: block;
+    transition: 0.3s;
+    user-select: none;
+  }
+
+  .title {
+    position: relative;
+    float: left;
+    color: $primary-color;
+    text-align: center;
+    padding: 0px 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    user-select: none;
+  }
+  .profile {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float: right;
+    color: $light-grey;
+    font-size: $header;
+    .notification {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      float: left;
+      margin: 0px 8px;
+      .badge {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        font-size: $content;
+        border-radius: 50%;
+        color: $white;
+        user-select: none;
+        background-color: $alert;
+      }
+      .bell {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        color: $light-grey;
+      }
+    }
+    .notification.yes {
+      .bell {
+        color: $primary-color;
+      }
+    }
+    .notification:hover {
+      .bell {
+        color: $primary-color;
+      }
+    }
+    .avatar {
+      float: left;
+      width: auto;
+      border: 1px transparent solid;
+      border-radius: 5px;
+      height: 30px;
+      cursor: pointer;
+      user-select: none;
+      .img {
+        float: left;
+        width: 25px;
+        margin: 0px 8px;
+        height: 25px;
+        border: 1px $light-grey solid;
+
+        background-color: $white;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .name {
+        float: left;
+        margin: 0px 8px;
+      }
+    }
+    .avatar:hover {
+      border: 1px $light-grey solid;
+    }
+  }
+}

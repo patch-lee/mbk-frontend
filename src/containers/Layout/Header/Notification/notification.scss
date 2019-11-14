@@ -1,0 +1,44 @@
+@import "../../../../scss/color.scss";
+@import "../../../../scss/font.scss";
+@import "../../../../scss/size.scss";
+
+.notification {
+  position: fixed;
+  top: $header-total-height;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  width: 200px;
+  background-color: $secondary-color;
+  .header {
+    position: relative;
+    padding: 5px;
+    color: $white;
+    font-size: $header;
+    width: auto;
+    height: 40px;
+  }
+  .content {
+    .item {
+      background-color: $primary-color;
+      height: 50px;
+      font-size: $content;
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.notification.no {
+  left: calc(100%-50px);
+  right: -200px;
+  width: 0x;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+}
+.notification.yes {
+  right: 0;
+  width: 200px;
+  transition: 0.5s;
+  transition-timing-function: ease-out;
+}

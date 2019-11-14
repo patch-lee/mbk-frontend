@@ -1,0 +1,130 @@
+@import "../../scss/color.scss";
+@import "../../scss/font.scss";
+@import "../../scss/size.scss";
+
+//clear button style
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  border: 0;
+}
+button:focus {
+  border: 3 solid $grey;
+}
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+.setting {
+  position: absolute;
+  z-index: 0;
+  margin: 25px;
+  left: 0;
+  right: 0;
+  top: $header-total-height;
+  bottom: 0;
+  .tab {
+    position: relative;
+    display: flex;
+    width: 100%;
+    div:first-child{
+      border-radius: 10px 0px 0px 0px ;
+    }
+    div:last-child{
+      border-radius: 0px 10px 0px 0px ;
+    }
+    div {
+      font-size: $header;
+      color: $grey;
+      width: 33%;
+      text-align: center;
+      height: 30px;
+      padding: 0px 5px;
+      z-index: 1;
+      cursor: pointer;
+      border-bottom: 1px solid $primary-color;
+    }
+    div:hover {
+      color: $black;
+      background-color: $white;
+      border: 1px solid $primary-color;
+      transition: 0.5s;
+      border-bottom: 1px solid $white;
+    }
+    div.active {
+      color: $black;
+      background-color: $white;
+      border: 1px solid $primary-color;
+      border-bottom: 1px solid $white;
+    }
+    .search {
+      border-right: none;
+    }
+  }
+  .content {
+    background-color: $white;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $primary-color;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
+    height: calc(100% - 50px);
+    div {
+      @keyframes comeIn {
+        0% {
+          left: 100%;
+          border: 1px $primary-color so;
+        }
+        100% {
+          left: 0%;
+
+          border: 0;
+        }
+      }
+      position: relative;
+      animation: comeIn 0.5s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+.setting.close {
+  left: $nav-size-close;
+  transition: 0.5s;
+}
+.setting.open {
+  left: $nav-size-open;
+  transition: 0.5s;
+}

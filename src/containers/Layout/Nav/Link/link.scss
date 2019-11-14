@@ -1,0 +1,82 @@
+@import "../../../../scss/color.scss";
+@import "../../../../scss/font.scss";
+@import "../../../../scss/size.scss";
+
+.icon {
+  display: inline-block;
+}
+.text {
+  margin-left: 5px;
+  display: inline-block;
+}
+/* The navigation menu links */
+.item {
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: $header;
+  color: $light-grey;
+  display: block;
+  border-left: 3px transparent solid;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+a:hover {
+  transition: 0.3s;
+  color: $primary-color;
+  border-left: 3px $primary-color solid;
+}
+.active {
+  transition: 0.3s;
+  color: $primary-color;
+  border-left: 3px $primary-color solid;
+}
+.item.close {
+  @keyframes fadeIn {
+    0% {
+      opacity: 1;
+      font-size: $header;
+    }
+    50% {
+      opacity: 0;
+      font-size: 0;
+    }
+    100% {
+      opacity: 0;
+      font-size: 0;
+    }
+  }
+  width: $nav-size-close;
+
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+
+  .text {
+    animation: fadeIn 0.5s;
+    animation-fill-mode: forwards;
+  }
+}
+.item.open {
+  @keyframes fadeOut {
+    0% {
+      opacity: 0;
+      font-size: 0;
+    }
+    50% {
+      opacity: 0;
+      font-size: 0;
+    }
+    100% {
+      opacity: 1;
+      font-size: $header;
+    }
+  }
+  width: $nav-size-open; /* please change nav size in size.scss  */
+  left: 0%;
+  transition-timing-function: ease-out;
+  transition: 0.5s;
+  .text {
+    animation: fadeOut 0.5s;
+    animation-fill-mode: forwards;
+  }
+}

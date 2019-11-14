@@ -1,15 +1,15 @@
-import * as actionTypes from '../actions/actionTypes'
+import * as actionTypes from "../actions/actionTypes";
 
-const initialState = {}
+const initialState = {};
 
 const reducers = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.someAction: {
-      return state
+      return state;
     }
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducers
+export default reducers;

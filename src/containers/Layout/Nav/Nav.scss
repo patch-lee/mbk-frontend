@@ -1,0 +1,44 @@
+@import "../../../scss/color.scss";
+@import "../../../scss/font.scss";
+@import "../../../scss/size.scss";
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Stay on top */
+  top: 40px; /* Stay at the top */
+  left: 0;
+  background-color: $white; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  .menu {
+    color: $light-grey;
+  border-left: 3px transparent solid;
+  padding: 5px 5px;
+  }
+  .menu:hover {
+    color: $primary-color;
+  }
+  /* When you mouse over the navigation links, change their color */
+  a:hover {
+    transition: 0.3s;
+    color: $primary-color;
+    border-left: 3px $primary-color solid;
+  }
+  .active {
+    transition: 0.3s;
+    color: $primary-color;
+    border-left: 3px $primary-color solid;
+  }
+}
+.sidenav.close {
+  width: $nav-size-close;
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+}
+.sidenav.open {
+  width: $nav-size-open; /* please change nav size in size.scss  */
+  left: 0%;
+  transition-timing-function: ease-out;
+  transition: 0.5s;
+}
