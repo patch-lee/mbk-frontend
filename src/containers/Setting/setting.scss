@@ -2,52 +2,6 @@
 @import "../../scss/font.scss";
 @import "../../scss/size.scss";
 
-//clear button style
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  border: 0;
-}
-button:focus {
-  border: 3 solid $grey;
-}
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input {
-  /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select {
-  /* 1 */
-  text-transform: none;
-}
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
 .setting {
   position: absolute;
   z-index: 0;
@@ -60,11 +14,11 @@ button,
     position: relative;
     display: flex;
     width: 100%;
-    div:first-child{
-      border-radius: 10px 0px 0px 0px ;
+    div:first-child {
+      border-radius: 10px 0px 0px 0px;
     }
-    div:last-child{
-      border-radius: 0px 10px 0px 0px ;
+    div:last-child {
+      border-radius: 0px 10px 0px 0px;
     }
     div {
       font-size: $header;
@@ -75,20 +29,35 @@ button,
       padding: 0px 5px;
       z-index: 1;
       cursor: pointer;
+      user-select: none;
       border-bottom: 1px solid $primary-color;
     }
     div:hover {
-      color: $black;
-      background-color: $white;
+      @keyframes fadeColor {
+        0% {
+          border-bottom: 0;
+        }
+        99% {
+          background-color: $white;
+
+          border-bottom: 0;
+        }
+        100% {
+          background-color: $white;
+          color: $black;
+
+          border-bottom: 0;
+        }
+      }
       border: 1px solid $primary-color;
-      transition: 0.5s;
-      border-bottom: 1px solid $white;
+      animation: fadeColor 0.5s;
+      animation-fill-mode: forwards;
     }
     div.active {
       color: $black;
       background-color: $white;
       border: 1px solid $primary-color;
-      border-bottom: 1px solid $white;
+      border-bottom: 0;
     }
     .search {
       border-right: none;
@@ -98,8 +67,9 @@ button,
     background-color: $white;
     position: relative;
     overflow: hidden;
+    padding: 10px;
     border: 1px solid $primary-color;
-    border-top: none;
+    border-top: 0;
     border-radius: 0px 0px 10px 10px;
     height: calc(100% - 50px);
     div {

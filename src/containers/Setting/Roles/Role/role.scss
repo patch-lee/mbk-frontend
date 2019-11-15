@@ -1,0 +1,52 @@
+@import "../../../../scss/color.scss";
+@import "../../../../scss/font.scss";
+@import "../../../../scss/size.scss";
+
+tr {
+  text-align: left;
+  color: $light-grey;
+}
+tr:hover {
+  color: $black;
+}
+td {
+  padding: 5px;
+  margin: 0;
+  border-bottom: 1px solid $light-grey;
+}
+.manage {
+  height: 25px;
+  .icon {
+    float: left;
+    margin: 0px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: $white;
+    background-color: $light-grey;
+    padding: 5px;
+    border: 1px transparent solid;
+  }
+  .icon:hover {
+    text-shadow: 0 0 2px $black;
+  }
+  .user:hover {
+    border: 1px $success solid;
+
+    background-color: $success;
+  }
+  .edit:hover {
+    border: 1px $warning solid;
+    background-color: $warning;
+  }
+  .delete{
+    float: right;
+    margin: 0px 5px;
+    padding: 5px;
+    color: $alert;
+    cursor: pointer;
+  }
+  .delete:hover {
+    border: 1px $alert solid;
+    color: $alert;
+  }
+}

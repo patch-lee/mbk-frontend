@@ -1,2 +1,2 @@
 export {} from "./auth";
-export {openNav,closeNav} from "./appState";
+export {openNav,closeNav,openOverlay,closeOverlay} from "./appState";

@@ -9,18 +9,18 @@
   right: 0;
   z-index: 5;
   width: 200px;
-  background-color: $secondary-color;
+  background-color: $white;
   .header {
     position: relative;
     padding: 5px;
-    color: $white;
+    color: $secondary-color;
     font-size: $header;
     width: auto;
     height: 40px;
   }
   .content {
     .item {
-      background-color: $primary-color;
+      background-color: $light-grey;
       height: 50px;
       font-size: $content;
       padding: 5px;

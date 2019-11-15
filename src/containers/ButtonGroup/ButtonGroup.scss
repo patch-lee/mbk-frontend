@@ -1,0 +1,15 @@
+@import "../../../../scss/color.scss";
+@import "../../../../scss/font.scss";
+@import "../../../../scss/size.scss";
+
+    .icon {
+      float: left;
+      margin: 0px 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 5px; border: 1px transparent solid;
+    }
+    .icon:hover{
+      text-shadow: 0 0 2px $black;
+      border: 1px $light-grey solid;
+    }

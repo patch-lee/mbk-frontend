@@ -34,7 +34,7 @@ class Nav extends Component {
           <Link to="/" icon="fa-home" name="Home" open={toggle} />
           <Link
             to="/setupdata"
-            icon="fa-home"
+            icon="fa-database"
             name="Setup Data"
             open={toggle}
           />
@@ -44,10 +44,10 @@ class Nav extends Component {
             name="Assignment"
             open={toggle}
           />
-          <Link to="/result" icon="fa-home" name="Result" open={toggle} />
-          <Link to="/appraisal" icon="fa-home" name="Appraisal" open={toggle} />
-          <Link to="/report" icon="fa-home" name="Report" open={toggle} />
-          <Link to="/dashboard" icon="fa-home" name="Dashboard" open={toggle} />
+          <Link to="/result" icon="fa-poll" name="Result" open={toggle} />
+          <Link to="/appraisal" icon="fa-clipboard-list" name="Appraisal" open={toggle} />
+          <Link to="/report" icon="fa-flag" name="Report" open={toggle} />
+          <Link to="/dashboard" icon="fa-columns" name="Dashboard" open={toggle} />
           <Link to="/settings" icon="fa-cogs" name="Setting" open={toggle} />
         </div>
       </Auxy>

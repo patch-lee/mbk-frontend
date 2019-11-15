@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 
-import Role from "./Role/Role";
+import Roles from "./Roles/Roles";
 import User from "./User/User";
 import Config from "./Config/Config";
 
@@ -28,7 +28,7 @@ class Setting extends Component {
     //start render selected tab
     switch (tab) {
       case "role":
-        content = <Role />;
+        content = <Roles />;
 
         activeRole = "active";
         activeUser = "";

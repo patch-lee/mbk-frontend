@@ -1,8 +1,7 @@
 @import './scss/color.scss';
-
+html,body{
+    margin: 0 !important;
+}
 .App{
-    position: fixed;
     background-color: $background-color;
-    width: 100%;
-    height: 100%;
 }
