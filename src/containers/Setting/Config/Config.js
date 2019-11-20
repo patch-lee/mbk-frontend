@@ -10,7 +10,7 @@ class Config extends Component {
     render() {
 
     return (
-      <div className={[classes.role].join(" ")}>
+      <div className={[classes.user].join(" ")}>
         UmU
       </div>
     );

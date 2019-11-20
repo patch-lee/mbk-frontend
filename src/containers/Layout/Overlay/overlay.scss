@@ -1,56 +1,64 @@
-@import "../../scss/color.scss";
-@import "../../scss/font.scss";
-@import "../../scss/size.scss";
+@import "../../../scss/color.scss";
+@import "../../../scss/font.scss";
+@import "../../../scss/size.scss";
 .overlay {
-  position: fixed !important;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 5px;
-  z-index: 10;
+  z-index: 5;
   display: flex;
+
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.25);
-  .box {
-    position: relative;
-    margin: auto;
-    display: block;
-    width: 70%;
-    height: 70%;
-    background-color: $white;
-    user-select: none;
-    border-radius: 10px;
-    padding: 15px;
-    cursor: auto;
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      color: $light-grey;
-    }
-    .close:hover {
-      color: $alert;
-    }
+}
+
+.box {
+  position: fixed;
+  margin: auto;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  z-index: 6;
+  background-color: $white;
+  user-select: none;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: auto;
+  .close {
+    float: right;
+    color: $light-grey;
   }
+  .close:hover {
+    color: $alert;
+  }
+}
+.start{
+  opacity: 0;
+  display: none;
+  visibility: hidden;
 }
 .show {
   @keyframes show {
     0% {
       opacity: 0;
-      transition: 0.5s;
       display: none;
-      
+      visibility: hidden;
     }
     1% {
-      
       opacity: 0;
+      visibility: visible;
       display: inherit;
       transition: 0.5s;
     }
     100% {
       opacity: 1;
       transition: 0.5s;
+      visibility: visible;
       display: inherit;
     }
   }
@@ -63,16 +71,17 @@
       opacity: 1;
       transition: 0.5s;
       display: inherit;
+      visibility: visible;
     }
     99% {
-      
       opacity: 0;
+      visibility: hidden;
       transition: 0.5s;
     }
     100% {
       opacity: 0;
-      transition: 0.5s;
       display: none;
+      visibility: hidden;
     }
   }
   animation: hide 0.5s;

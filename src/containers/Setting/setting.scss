@@ -14,20 +14,15 @@
     position: relative;
     display: flex;
     width: 100%;
-    div:first-child {
-      border-radius: 10px 0px 0px 0px;
-    }
-    div:last-child {
-      border-radius: 0px 10px 0px 0px;
-    }
-    div {
+   
+    .tabContent {
+      border-radius: 10px 10px 0px 0px;
       font-size: $header;
       color: $grey;
       width: 33%;
       text-align: center;
       height: 30px;
       padding: 0px 5px;
-      z-index: 1;
       cursor: pointer;
       user-select: none;
       border-bottom: 1px solid $primary-color;
@@ -63,32 +58,42 @@
       border-right: none;
     }
   }
-  .content {
-    background-color: $white;
-    position: relative;
+  @keyframes comeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes comeOut {
+    0% {
+     opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .content-box {
+    background-color: $white;position: relative;
     overflow: hidden;
     padding: 10px;
     border: 1px solid $primary-color;
     border-top: 0;
     border-radius: 0px 0px 10px 10px;
     height: calc(100% - 50px);
-    div {
-      @keyframes comeIn {
-        0% {
-          left: 100%;
-          border: 1px $primary-color so;
-        }
-        100% {
-          left: 0%;
-
-          border: 0;
-        }
-      }
+    .content{
       position: relative;
-      animation: comeIn 0.5s;
-      animation-fill-mode: forwards;
     }
   }
+}
+.content.in{
+  animation: comeIn 0.5s;
+  animation-fill-mode: forwards;
+}
+.content.out{
+  animation: comeOut 0.5s;
+  animation-fill-mode: forwards;
 }
 .setting.close {
   left: $nav-size-close;

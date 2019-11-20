@@ -2,7 +2,8 @@ import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
   navToggle: "close",
-  overlayToggle:"hide"
+  overlayToggle: "close",
+  overlayContent: ""
 };
 
 const reducers = (state = initialState, action) => {
@@ -14,10 +15,20 @@ const reducers = (state = initialState, action) => {
       return { ...state, navToggle: "close" };
     }
     case actionTypes.APP_STATE_OPEN_OVERLAY: {
-      return { ...state, overlayToggle: "show" };
+      return {
+        ...state,
+        navToggle: "open"
+      };
+    }
+    case actionTypes.APP_STATE_SET_OVERLAY: {
+      return {
+        ...state,
+
+        overlayContent: action.content
+      };
     }
     case actionTypes.APP_STATE_CLOSE_OVERLAY: {
-      return { ...state, overlayToggle: "hide" };
+      return { ...state, navToggle: "close" };
     }
     default:
       return state;

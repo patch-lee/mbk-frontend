@@ -12,72 +12,67 @@ import icon from "@fortawesome/fontawesome-free/css/all.css";
 
 class Setting extends Component {
   state = {
-    tab: "role"
+    animation: "in",
+    active: ["active", "", ""],
+    content: <Roles />
   };
   clickTab = tab => {
-    this.setState({ tab });
-  };
-
-  render() {
-    let { tab } = this.state;
-    let { toggle } = this.props;
-    let content;
-    let activeRole = "";
-    let activeUser = "";
-    let activeConfig = "";
-    //start render selected tab
+    let active, content;
     switch (tab) {
-      case "role":
+      case "Role":
         content = <Roles />;
-
-        activeRole = "active";
-        activeUser = "";
-        activeConfig = "";
+        active = ["active", "", ""];
         break;
-      case "user":
+      case "User":
         content = <User />;
-        activeRole = "";
-        activeUser = "active";
-        activeConfig = "";
+        active = ["", "active", ""];
+
         break;
-      case "config":
+      case "Config":
         content = <Config />;
-        activeRole = "";
-        activeUser = "";
-        activeConfig = "active";
+        active = ["", "", "active"];
+
         break;
       default:
         break;
     }
-    //end render selected tab
+    this.setState({ animation: "out"})
+      setTimeout(()=>{this.setState({animation: "in", active, content})}, 0.5);
+  };
 
+  render() {
+    let { animation, content, active } = this.state;
+    let { toggle } = this.props;
     return (
       <div className={[classes.setting, classes[toggle]].join(" ")}>
         <div className={classes.tab}>
           <div
-            className={[classes.role,classes[activeRole]].join(" ")}
-            onClick={this.clickTab.bind(this, "role")}
+            className={[classes.role, classes[active[0]],classes.tabContent].join(" ")}
+            onClick={this.clickTab.bind(this, "Role")}
           >
             <i className={[icon.fas, icon["fa-user-tag"]].join(" ")} />
             Role
           </div>
           <div
-            className={[classes.user,classes[activeUser]].join(" ")}
-            onClick={this.clickTab.bind(this, "user")}
+            className={[classes.user, classes[active[1]],classes.tabContent].join(" ")}
+            onClick={this.clickTab.bind(this, "User")}
           >
             <i className={[icon.fas, icon["fa-user"]].join(" ")} />
             User
           </div>
           <div
-            className={[classes.config,classes[activeConfig]].join(" ")}
-            onClick={this.clickTab.bind(this, "config")}
+            className={[classes.config, classes[active[2]],classes.tabContent].join(" ")}
+            onClick={this.clickTab.bind(this, "Config")}
           >
             <i className={[icon.fas, icon["fa-clipboard-check"]].join(" ")} />
             Configuration
           </div>
         </div>
-        <div className={[classes.content, classes[tab]].join(" ")}>
-          {content}
+
+        <div className={[classes["content-box"], classes[animation]].join(" ")}>
+          <div className={[classes["content"], classes[animation]].join(" ")}>
+            {content}
+          </div>
         </div>
       </div>
     );

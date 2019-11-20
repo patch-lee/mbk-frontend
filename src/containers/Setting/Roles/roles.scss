@@ -5,7 +5,8 @@
 .roles {
   width: 100%;
   height: 100%;
-  .add-role{
+  position: relative;
+  .add-role {
     float: right;
     padding: 5px;
     border-radius: 15px;
@@ -14,10 +15,9 @@
     cursor: pointer;
     margin: 0px 8px;
   }
-  .add-role:hover{
-    color:$white;
+  .add-role:hover {
+    color: $white;
     background-color: $primary-color;
-
   }
   .table {
     width: 100%;
@@ -26,7 +26,8 @@
     border-spacing: 0;
     border-collapse: collapse;
     user-select: none;
-    th {
+    .header {
+      text-align: left;
       color: $black;
       padding: 5px;
       margin: 0;
@@ -34,8 +35,9 @@
     }
   }
   .manage {
-    height: 25px;
-    width: 170px;
-    
+    width: 250px;
+  }
+  .close {
+    width: 50px;
   }
 }

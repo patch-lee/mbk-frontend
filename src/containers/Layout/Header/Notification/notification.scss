@@ -30,15 +30,15 @@
 }
 
 .notification.no {
-  left: calc(100%-50px);
+  left: calc(100%-50px);  
   right: -200px;
   width: 0x;
   transition: 0.5s;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-out;
 }
 .notification.yes {
   right: 0;
   width: 200px;
   transition: 0.5s;
-  transition-timing-function: ease-out;
+  transition-timing-function: ease-in;
 }

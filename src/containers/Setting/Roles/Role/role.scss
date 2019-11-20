@@ -2,20 +2,19 @@
 @import "../../../../scss/font.scss";
 @import "../../../../scss/size.scss";
 
-tr {
+.role {
   text-align: left;
   color: $light-grey;
 }
-tr:hover {
+.role:hover {
   color: $black;
 }
-td {
+.content {
   padding: 5px;
   margin: 0;
   border-bottom: 1px solid $light-grey;
 }
 .manage {
-  height: 25px;
   .icon {
     float: left;
     margin: 0px 5px;
@@ -38,15 +37,17 @@ td {
     border: 1px $warning solid;
     background-color: $warning;
   }
-  .delete{
-    float: right;
+  .toggle {
+    float: left;
     margin: 0px 5px;
     padding: 5px;
-    color: $alert;
-    cursor: pointer;
   }
-  .delete:hover {
-    border: 1px $alert solid;
-    color: $alert;
-  }
+}
+.delete {
+  text-align: right;
+  color: $light-grey;
+  cursor: pointer;
+}
+.delete:hover {
+  color: $alert;
 }

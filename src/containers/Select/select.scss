@@ -1,0 +1,19 @@
+@import "../../scss/color.scss";
+@import "../../scss/font.scss";
+
+.select {
+  color: $grey;
+  display: flex;
+  justify-content: space-between;
+  font-size: $content;
+  user-select: none;
+  .name {
+  }
+  .form {
+    margin-left: 10px;
+    width: 125px;
+    border-radius: 5px;
+    border: 1px solid $secondary-color;
+    font-size: $content;
+  }
+}

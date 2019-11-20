@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 
+import Input from "../Input/Input";
+import Select from "../Select/Select"
+
 //css sass
 import classes from "./filter.scss";
 import icon from "@fortawesome/fontawesome-free/css/all.css";
@@ -11,20 +14,18 @@ class Filter extends Component {
     let { filter } = this.props;
     let data = filter.map(res => {
       if (res.type === "select") {
-        let option = res.data.map(data => {
-          return <option key={data}>{data}</option>;
-        });
+  
         return (
           <div className={classes.form} key={res.lebel}>
-            {res.label}
-            <select>{option}</select>
+           <Select lebel={res.label} data={res.data}/>
           </div>
         );
       } else {
+        console.log(res);
+
         return (
-          <div className={classes.form} key={res.lebel}>
-            {res.label}
-            <input type="text" />
+          <div className={classes.form}>
+            <Input name={res.label} className={classes.form} />
           </div>
         );
       }

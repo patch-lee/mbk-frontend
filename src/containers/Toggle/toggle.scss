@@ -1,0 +1,50 @@
+@import "../../scss/color.scss";
+@import "../../scss/font.scss";
+.toggle {
+  width: 50px;
+  height: 25px;
+
+  border: 1px $light-grey solid;
+  background-color: $light-grey;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  .button {
+    width: 24px;
+    height: 24px;
+    border: 1px $light-grey solid;
+    background-color: $white;
+    border-radius: 50%;
+    position: absolute;
+  }
+}
+.toggle:hover {
+  border: 1px $secondary-color solid;
+  .button:hover {
+    border: 1px $secondary-color solid;
+  }
+}
+.on{
+  border: 1px $secondary-color solid;
+  background-color: $secondary-color;
+  transition: 0.5s;
+  transition-timing-function: ease-out;
+}
+.off{
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+  border: 1px $light-grey solid;
+}
+
+.button.on {
+  transition: 0.5s;
+  border: 1px $secondary-color solid;
+  transition-timing-function: ease-out;
+  left: 24px;
+}
+.button.off {
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+
+  left: 0;
+}

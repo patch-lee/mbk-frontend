@@ -2,8 +2,11 @@
 @import "../../../scss/font.scss";
 @import "../../../scss/size.scss";
 
-.header {
-  position: relative;
+.header { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: $white;
   color: $light-grey;
   font-size: $title;

@@ -1,0 +1,24 @@
+@import "../../scss/color.scss";
+@import "../../scss/font.scss";
+
+.input {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: $grey;
+  font-size: $content;
+  user-select: none;
+  .name {
+  }
+  .form {
+    width: 125px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    border: 1px solid $secondary-color;
+    font-size: $content;
+  }
+  .form:focus {
+    outline-color: $primary-color;
+  }
+}

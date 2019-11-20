@@ -11,11 +11,16 @@ export const closeNav = () => {
     type: actionTypes.APP_STATE_CLOSE_NAV
   };
 };
-export const openOverlay = () => {
-  console.log("open?");
-  
+export const openOverlay = content => {
   return {
     type: actionTypes.APP_STATE_OPEN_OVERLAY
+  };
+};
+
+export const setOverlay = content => {
+  return {
+    type: actionTypes.APP_STATE_OPEN_OVERLAY,
+    content
   };
 };
 export const closeOverlay = () => {
